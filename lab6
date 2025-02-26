@@ -1,0 +1,124 @@
+builtin ex
+1
+import math
+
+def mul(lst):
+    return math.prod(lst)
+
+lst = list(map(int, input().split()))
+print("Product:", mul(lst))
+
+2
+def count(s):
+    u = sum(1 for c in s if c.isupper())
+    l = sum(1 for c in s if c.islower())
+    return u, l
+
+s = input()
+u, l = count(s)
+print("Upper:", u, "Lower:", l)
+
+3
+def pal(s):
+    return s == s[::-1]
+
+s = input()
+print("Palindrome:", pal(s))
+4
+import math
+import time
+
+def sqrt_delay(n, d):
+    time.sleep(d / 1000)
+    return math.sqrt(n)
+
+n, d = map(int, input().split())
+print(f"Square root of {n} after {d} ms:", sqrt_delay(n, d))
+5
+def all_t(t):
+    return all(t)
+
+t = tuple(map(int, input().split()))
+print("All True:", all_t(t))
+
+directories files
+1
+import os
+
+def list_contents(path):
+    print("Directories:", [d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))])
+    print("Files:", [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))])
+    print("All:", os.listdir(path))
+
+path = input()
+list_contents(path)
+2
+import os
+
+def check_access(path):
+    print("Exists:", os.path.exists(path))
+    print("Readable:", os.access(path, os.R_OK))
+    print("Writable:", os.access(path, os.W_OK))
+    print("Executable:", os.access(path, os.X_OK))
+
+path = input()
+check_access(path)
+3
+import os
+
+def check_path(path):
+    if os.path.exists(path):
+        print("Path exists")
+        print("Directory:", os.path.dirname(path))
+        print("Filename:", os.path.basename(path))
+    else:
+        print("Path does not exist")
+
+path = input()
+check_path(path)
+4
+def count_lines(file_path):
+    with open(file_path, 'r') as f:
+        return sum(1 for line in f)
+
+file_path = input()
+print(count_lines(file_path))
+5
+def list_to_f(file_path, lst):
+    with open(file_path, 'w') as f:
+        for item in lst:
+            f.write(str(item) + '\n')
+
+file_path = input()
+lst = input().split()
+list_to_f(file_path, lst)
+6
+import string
+
+def create_files():
+    for letter in string.ascii_uppercase:
+        with open(f"{letter}.txt", "w") as f:
+            f.write(f"This is {letter}.txt\n")
+
+create_files()
+7
+def copy_file(src, dst):
+    with open(src, 'r') as f1, open(dst, 'w') as f2:
+        f2.write(f1.read())
+
+src = input()
+dst = input()
+copy_file(src, dst)
+8
+import os
+
+def delete_file(path):
+    if os.path.exists(path) and os.access(path, os.W_OK):
+        os.remove(path)
+        print("File deleted successfully.")
+    else:
+        print("File does not exist or cannot be deleted.")
+
+print("Enter file path to delete:")
+path = input()
+delete_file(path)
