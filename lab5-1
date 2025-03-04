@@ -1,53 +1,87 @@
+1
 import re
-
 def match_ab(s):
     pattern = r'^a*b*$'
     return bool(re.match(pattern, s))
 
+if __name__ == "__main__":
+    print(match_ab("abbb"))
+2
+import re
 def match_abb(s):
     pattern = r'^a{1}b{2,3}$'
     return bool(re.match(pattern, s))
 
+if __name__ == "__main__":
+    print(match_abb("abb"))
+3
+import re
 def underscore(s):
     pattern = r'\b[a-z]+_[a-z]+\b'
     return re.findall(pattern, s)
 
+if __name__ == "__main__":
+    print(underscore("hello_world test_case"))
+
+4
+import re
 def upper_lower(s):
     pattern = r'[A-Z][a-z]+'
     return re.findall(pattern, s)
 
+if __name__ == "__main__":
+    print(upper_lower("Hello World Python"))
+
+5
+import re
 def match_a_any_b(s):
     pattern = r'^a.*b$'
     return bool(re.match(pattern, s))
 
+if __name__ == "__main__":
+    print(match_a_any_b("axxxb"))
+
+6
+import re
 def replace_scd(s):
     pattern = r'[ ,.]'
     return re.sub(pattern, ':', s)
 
+if __name__ == "__main__":
+    print(replace_scd("Hello, world. Python is fun"))
+
+7
+import re
 def snk_cml(s):
     words = s.split('_')
     return words[0] + ''.join(word.capitalize() for word in words[1:])
 
+if __name__ == "__main__":
+    print(snk_cml("hello_world_test"))
+
+8
+import re
 def uppercase(s):
     pattern = r'(?=[A-Z])'
     return re.split(pattern, s)
 
+if __name__ == "__main__":
+    print(uppercase("HelloWorldPython"))
+
+9
+import re
 def insert_spaces(s):
     pattern = r'([a-z])([A-Z])'
     return re.sub(pattern, r'\1 \2', s)
 
+if __name__ == "__main__":
+    print(insert_spaces("HelloWorldPython"))
+
+10
+import re
 def cml_to_snk(s):
     pattern = r'([a-z])([A-Z])'
     return re.sub(pattern, r'\1_\2', s).lower()
 
 if __name__ == "__main__":
-    print(match_ab("abbb"))
-    print(match_abb("abb"))
-    print(underscore("hello_world test_case"))
-    print(upper_lower("Hello World Python"))
-    print(match_a_any_b("axxxb"))
-    print(replace_scd("Hello, world. Python is fun"))
-    print(snk_cml("hello_world_test"))
-    print(uppercase("HelloWorldPython"))
-    print(insert_spaces("HelloWorldPython"))
     print(cml_to_snk("HelloWorldPython"))
