@@ -12,7 +12,7 @@ class Figures:
 
     def draw(self, event, screen, another_layer):
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:  # left click
+            if event.button == 1: 
                 self.x1, self.y1 = event.pos
                 self.isMouseDown = True
 
@@ -62,12 +62,12 @@ class Figures:
 
     def TriangleCoordinates(self, x, y, radius):
 
-        # Angles of triangle
+        # angles of triangle
         angle1 = math.radians(95)  
         angle2 = math.radians(215)  
         angle3 = math.radians(325)  
         
-        # Coordinates of triangle
+        # coordinates of triangle
         x1 = x + radius * math.cos(angle1)
         y1 = y - radius * math.sin(angle1)
         x2 = x + radius * math.cos(angle2)

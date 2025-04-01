@@ -9,10 +9,10 @@ figures = figures.Figures()
 
 is_draw = False
 end_pos = (0, 0)
-color = (255, 255, 255) # Start color
+color = (255, 255, 255) 
 tool = 'pen'
 radius = 4 # pen radius
-screen.fill((0, 0, 0)) # Black background
+screen.fill((0, 0, 0)) # black background
 
 
 def roundline(screen, color, start, end, r = 1):
@@ -30,13 +30,19 @@ while True:
     pressed = pygame.key.get_pressed() 
 
     if pressed[pygame.K_r]:
-        color = (255, 0, 0)     # Red
+        color = (255, 0, 0)     # red
         
     elif pressed[pygame.K_b]:
-        color = (0, 0, 255)     # Blue
+        color = (0, 0, 255)     # blue
         
     elif pressed[pygame.K_g]:
-        color = (0, 255, 0)     # Green
+        color = (0, 255, 0)     # green
+        
+    elif pressed[pygame.K_y]:
+        color = (255, 255, 0)   # yellow
+
+    elif pressed[pygame.K_w]: 
+        color = (255, 255, 255) # white
 
     #tools of draw
 
@@ -46,6 +52,12 @@ while True:
          tool = 'circle' 
     if pressed[pygame.K_3]:
          tool = 'rect'  
+    if pressed[pygame.K_4]:
+         tool = 'triangle'
+    if pressed[pygame.K_5]:
+         tool = 'equilateral triangle'
+    if pressed[pygame.K_6]:
+         tool = 'rhombus'
     if pressed[pygame.K_7]:
          tool = 'erasor'
 
@@ -57,6 +69,15 @@ while True:
 
         if tool == 'circle': 
             figures.draw_circle(event, screen, another_layer, color)
+
+        if tool == 'triangle': 
+            figures.draw_triangle(event, screen, another_layer, color)
+
+        if tool == 'equilateral triangle': 
+            figures.draw_equilateral_triangle(event, screen, another_layer, color)
+
+        if tool == 'rhombus': 
+            figures.draw_rhombus(event, screen, another_layer, color)
 
         if tool == 'erasor':
             figures.erasor(event, screen, another_layer)
