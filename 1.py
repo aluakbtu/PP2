@@ -14,13 +14,13 @@ clocks = pygame.time.Clock()
 
 WHITE = (255, 255, 255)
 
-clock = pygame.image.load("/Users/askarovva/Desktop/Lab7 programming/clock.jpg")
+clock = pygame.image.load("/Users/aluaw/Desktop/lab7/clock.jpg")
 CL_WIDTH = 500
 CL_HIGHT = 500
 CL_POS_X = S_WIDTH / 2 - CL_WIDTH / 2
 CL_POS_Y = S_HIGHT / 2 - CL_HIGHT / 2
 
-big_arrow = pygame.image.load("/Users/askarovva/Desktop/Lab7 programming/big_arrow.png")
+big_arrow = pygame.image.load("/Users/aluaw/Desktop/lab7/big_arrow.png")
 BA_WIDTH = 35
 BA_RATIO = 0.14
 BA_HIGHT = BA_WIDTH / BA_RATIO
@@ -29,7 +29,7 @@ big_arrow = pygame.transform.scale(big_arrow, (BA_WIDTH, BA_HIGHT))
 ba_rect = big_arrow.get_rect()
 ba_rect.center = PLACE
 
-small_arrow = pygame.image.load("/Users/askarovva/Desktop/Lab7 programming/small_arrow.png")
+small_arrow = pygame.image.load("/Users/aluaw/Desktop/lab7/small_arrow.png")
 SA_WIDTH = 50
 SA_RATIO = 0.3
 SA_HIGHT = SA_WIDTH / SA_RATIO
