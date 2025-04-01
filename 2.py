@@ -12,9 +12,9 @@ BLACK = (0, 0, 0)
 
 font = pygame.font.Font(None, 36)
 
-playlist = ["/Users/askarovva/Desktop/Lab7 programming/song1.mp3", 
-            "/Users/askarovva/Desktop/Lab7 programming/song2.mp3", 
-            "/Users/askarovva/Desktop/Lab7 programming/song3.mp3"]  
+playlist = ["/Users/aluaw/Desktop/lab7/song1.mp3", 
+            "/Users/aluaw/Desktop/lab7/song2.mp3", 
+            "/Users/aluaw/Desktop/lab7/song3.mp3"]  
 current_index = 0
 
 def play_song(index):
